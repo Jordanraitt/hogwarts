@@ -1,0 +1,23 @@
+<form action="/hogwarts_students/<%= @students.id %>" method="post">
+
+  <label for="first-name-field">First Name</label>
+  <input type="text" name="first_name" id= first-name-field value= "<%=@students.first_name %>"/>
+
+  <label for="last-name-field">Last Name</label>
+  <input type="text" value= "<%=@students.last_name %>" name="last_name" id= last-name-field />
+
+  <label for="house-field">House</label>
+  <select name="house" id=house-field>
+    <option value="<%=@students.house %>" selected></option>
+    <option value="Gryffindor">Gryffindor</option>
+    <option value="Hufflepuff">Hufflepuff</option>
+    <option value="Slytherian">Slytherian</option>
+    <option value="Ravenclaw">Ravenclaw</option>
+  </select>
+
+  <label for="age-field">Age</label>
+  <input type="number" value= "<%=@students.age %>" name="age" min="10" max="20" id="age-field">
+
+  <input type="submit" value="Edit Student">
+
+</form>

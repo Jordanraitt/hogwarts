@@ -29,7 +29,7 @@ class Student
       @id = student_data.first()['id'].to_i
     end
 
-    def find(id)
+    def self.find(id)
       sql = "SELECT * FROM hogwarts_students
       WHERE id = $1"
       values = [id]

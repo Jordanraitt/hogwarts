@@ -21,5 +21,32 @@ get '/hogwarts_students/:id' do
   erb(:show)
 end
 
-
 #CREATE
+post '/hogwarts_students' do
+  @students = Student.new(params)
+  @students.save()
+  erb(:create)
+end
+
+post '/hogwarts_students/:id/delete' do
+  id = params[:id].to_i()
+  @students = Student.find(id)
+  @students.delete
+  erb(:delete)
+end
+
+get '/hogwarts_students/:id/edit' do
+  id = params[:id].to_i()
+  @students = Student.find(id)
+  erb(:edit)
+end
+
+post '/hogwarts_student/:id' do
+  @students = Student.new(params)
+  @students.update()
+  erb(:update)
+end
+
+
+
+#
