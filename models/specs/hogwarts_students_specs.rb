@@ -31,5 +31,5 @@ class TestStudent < MiniTest::Test
   def test_age()
     assert_equal(11, @student.age)
   end
-
+  
 end
